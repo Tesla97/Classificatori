@@ -1,5 +1,5 @@
 # Regressione-Logistica
-La regressione logistica è un modello probabilistico impiegato per la risoluzione di problemi di classificazione lineari e binari , la variabile target , dunque , è una variabile dicotomica , cioè assume solo i valori 0 e 1.
+La regressione logistica è un modello probabilistico impiegato per la risoluzione di problemi di classificazione lineari e binari , la variabile target , dunque , è una variabile dicotomica , cioè assume solo i valori 0 e 1. Nella pratica non si è solamente interessati a predire l'etichetta delle classi , ma si vuole in qualche modo determinare la probabilità di appartenenza. Quindi non solo vogliamo stabilire a che classe appartiene un determinato esempio, ma siamo anche interessati a stimarne una probabilità di appartenenza.
 
 La regressione logistica , come modello probabilistico , si fonda sul concetto di probabilità di appartenenza di un esempio ad una determinata classe
 <p align='center'>
@@ -55,6 +55,12 @@ if __name__ == '__main__':
    <img src='img/sigmoide.png' width = '50%'>
 </p>
 
-Come notiamo questa funzione prende in input delle combinazioni lineari delle caratteristiche (input della rete) e li mappa in valori compresi sull'intervallo [0,1] , interpretabili come la probabilità che il generico esempio con caratteristiche x appartenga alla classe y = 1.In phearticolare si noti che la funzione vale 0.5 , quando l'input della rete è zero.
+Come notiamo questa funzione prende in input delle combinazioni lineari delle caratteristiche (input della rete) e li mappa in valori compresi sull'intervallo [0,1] , interpretabili come la probabilità che il generico esempio con caratteristiche x appartenga alla classe y = 1.In phearticolare si noti che la funzione vale 0.5 , quando l'input della rete è zero. 
 
+A questo punto possiamo impiegare una semplice funzione gradino (Heaviside) per convertire il valore di probabilità in un valore binario
+
+       if (sigmoide(x) >= 0.5) 
+           y = 1
+       else 
+           y = 0
 
