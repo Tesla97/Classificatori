@@ -64,3 +64,4 @@ A questo punto possiamo impiegare una semplice funzione gradino (Heaviside) per 
        else 
            y = 0
 
+Per determinare il vettore dei besi b , si utilizza un semplice stimatore a massima verosimiglianza.
