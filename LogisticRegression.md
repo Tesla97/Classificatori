@@ -101,5 +101,7 @@ if __name__ == '__main__':
 passiamo ora a graficare il risultato
 
 <p align='center'>
-  <img src='funzionaliConfronto.png' width='50%'>
+  <img src='img/funzionaliConfronto.png' width='50%'>
 </p>
+
+notiamo che nei rispettivi casi il costo è massimo se prediciamo correttamente l'appartenenza dell'esempio alla classe corrispondente. Al contrario se la predizione è errata il costo va a meno infinito. 
