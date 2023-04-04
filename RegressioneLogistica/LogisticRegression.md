@@ -52,7 +52,7 @@ if __name__ == '__main__':
     plt.show()
 ```
 <p align='center'>
-   <img src='img/sigmoide.png' width = '50%'>
+   <img src='/img/sigmoide.png' width = '50%'>
 </p>
 
 Come notiamo questa funzione prende in input delle combinazioni lineari delle caratteristiche (input della rete) e li mappa in valori compresi sull'intervallo [0,1] , interpretabili come la probabilità che il generico esempio con caratteristiche x appartenga alla classe y = 1.In phearticolare si noti che la funzione vale 0.5 , quando l'input della rete è zero. 
@@ -67,13 +67,13 @@ A questo punto possiamo impiegare una semplice funzione gradino (Heaviside) per 
 Per determinare il vettore dei besi b , si utilizza un semplice stimatore a massima verosimiglianza. Ipotizzando l'indipendenza tra i campioni di addestramento , il funzionale (verosimiglianza) che si intende massimizzare
 
 <p align='center'>
-  <img src='img/funzionale.png' width='40%'> 
+  <img src='/img/funzionale.png' width='40%'> 
 </p>
 
 ovviamente basta moltiplicarlo per -1 per passare ad un problema di minimizzazione. Ma facciamo un attimo una piccola analisi sullo i-esimo termine della sommatoria
 
 <p align='center'>
-  <img src='img/singolotermine.png' width='30%'> 
+  <img src='/img/singolotermine.png' width='30%'> 
 </p>
 
 notiamo che vale log(sigmodide(x)) quando y_i = 1 altrimenti log(1-sigmoide(x)).Di seguito è riportato il codice per il tracciamento del funzionale di costo nei due casi
@@ -101,7 +101,7 @@ if __name__ == '__main__':
 passiamo ora a graficare il risultato per camirne meglio il comportamento dei singoli contributi.
 
 <p align='center'>
-  <img src='img/funzionaliConfronto.png' width='50%'>
+  <img src='/img/funzionaliConfronto.png' width='50%'>
 </p>
 
 notiamo che nei rispettivi casi il costo è massimo se prediciamo correttamente l'appartenenza dell'esempio alla classe corrispondente. Al contrario se la predizione è errata il costo va a meno infinito.Le predizioni errate vengono dunque pesate con un costo sempre minore.
