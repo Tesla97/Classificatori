@@ -70,4 +70,6 @@ Per determinare il vettore dei besi b , si utilizza un semplice stimatore a mass
   <img src='img/funzionale.png' width='40%'> 
 </p>
 
-ovviamente basta moltiplicarlo per -1 per passare ad un problema di minimizzazione.
+ovviamente basta moltiplicarlo per -1 per passare ad un problema di minimizzazione. Ma facciamo un attimo una piccola analisi sullo i-esimo termine della sommatoria
+
+y_i ln(sigmo
