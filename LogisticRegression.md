@@ -100,3 +100,6 @@ if __name__ == '__main__':
 ```
 passiamo ora a graficare il risultato
 
+<p align='center'>
+  <img src='funzionaliConfronto.png' width='50%'>
+</p>
