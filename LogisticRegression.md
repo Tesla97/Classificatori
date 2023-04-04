@@ -98,10 +98,10 @@ if __name__ == '__main__':
     plt.plot(t,c2,linestyle='--',label='y=0')
     plt.show()
 ```
-passiamo ora a graficare il risultato
+passiamo ora a graficare il risultato per camirne meglio il comportamento dei singoli contributi.
 
 <p align='center'>
   <img src='img/funzionaliConfronto.png' width='50%'>
 </p>
 
-notiamo che nei rispettivi casi il costo è massimo se prediciamo correttamente l'appartenenza dell'esempio alla classe corrispondente. Al contrario se la predizione è errata il costo va a meno infinito. 
+notiamo che nei rispettivi casi il costo è massimo se prediciamo correttamente l'appartenenza dell'esempio alla classe corrispondente. Al contrario se la predizione è errata il costo va a meno infinito. Si noti in particolare l'intersezione a 0.5.
