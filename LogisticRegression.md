@@ -72,4 +72,31 @@ Per determinare il vettore dei besi b , si utilizza un semplice stimatore a mass
 
 ovviamente basta moltiplicarlo per -1 per passare ad un problema di minimizzazione. Ma facciamo un attimo una piccola analisi sullo i-esimo termine della sommatoria
 
-y_i ln(sigmo
+<p align='center'>
+  <img src='img/singolotermine.png' width='30%'> 
+</p>
+
+notiamo che vale log(sigmodide(x)) quando y_i = 1 altrimenti log(1-sigmoide(x)).Di seguito è riportato il codice per il tracciamento del funzionale di costo nei due casi
+
+```bash
+# funzionale di costo y_i = 1
+def costoPrimo(x):
+    return np.log(sigmoideFunction(x))
+
+# funzionale di costo y_i = 0
+def costoSecondo(x):
+    return np.log(1 - sigmoideFunction(x))
+
+# main
+if __name__ == '__main__':
+    x  = np.arange(-10,10,0.1)
+    c1 = costoPrimo(x)
+    c2 = costoSecondo(x)
+    t  = sigmoideFunction(x)
+    plt.figure(1)
+    plt.plot(t,c1,label='y=1')
+    plt.plot(t,c2,linestyle='--',label='y=0')
+    plt.show()
+```
+passiamo ora a graficare il risultato
+
