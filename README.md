@@ -55,7 +55,6 @@ if __name__ == '__main__':
    <img src='img/sigmoide.png' width = '50%'>
 </p>
 
-Come notiamo questa funzione prende in input delle combinazioni lineari delle caratteristiche (input della rete) e li mappa in valori compresi sull'intervallo [0,1] , interpretabili come la probabilità che il generico esempio con caratteristiche x appartenga alla classe y = 1.                                           
-                                 
+Come notiamo questa funzione prende in input delle combinazioni lineari delle caratteristiche (input della rete) e li mappa in valori compresi sull'intervallo [0,1] , interpretabili come la probabilità che il generico esempio con caratteristiche x appartenga alla classe y = 1.In phearticolare si noti che la funzione vale 0.5 , quando l'input della rete è zero.
 
 
