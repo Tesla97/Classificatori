@@ -104,4 +104,4 @@ passiamo ora a graficare il risultato per camirne meglio il comportamento dei si
   <img src='img/funzionaliConfronto.png' width='50%'>
 </p>
 
-notiamo che nei rispettivi casi il costo è massimo se prediciamo correttamente l'appartenenza dell'esempio alla classe corrispondente. Al contrario se la predizione è errata il costo va a meno infinito. Si noti in particolare l'intersezione a 0.5.
+notiamo che nei rispettivi casi il costo è massimo se prediciamo correttamente l'appartenenza dell'esempio alla classe corrispondente. Al contrario se la predizione è errata il costo va a meno infinito.Le predizioni errate vengono dunque pesate con un costo sempre maggiore.
