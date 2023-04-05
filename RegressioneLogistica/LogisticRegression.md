@@ -106,3 +106,70 @@ passiamo ora a graficare il risultato per camirne meglio il comportamento dei si
 
 notiamo che nei rispettivi casi il costo è massimo se prediciamo correttamente l'appartenenza dell'esempio alla classe corrispondente. Al contrario se la predizione è errata il costo va a meno infinito.Le predizioni errate vengono dunque pesate con un costo sempre minore.
 
+
+<h1> Implementazione con Scikit-Learn </h1>
+Vediamo ora una implementazione del precedente algoritmo di classificazione con riferimento ad un classico dataset , il dataset Iris. In particolare faremo uso della libreria scikit-learn , la quale fornisce una implementazione ben ottimizzata , che di default supporta anche situazioni multiclasse (tecnica OvR or OvA).
+
+Iniziamo innanzitutto con caricare il dataset Iris , contenuto già nella libraria scikit-learn.
+
+```bash
+from sklearn import datasets
+
+if __name__ == '__main__':
+    # caricamento dataset
+    ds = datasets.load_iris()
+    # caricamento esempi di addestramento
+    X  = ds.data[:,[0,1]]
+    y  = ds.target
+```
+
+in particolare notiamo come carichiamo solo le righe corrispondendi a 2 delle 4 totali caratteristiche , questo per scopi illustrativi.In particolare stiamo facendo riferimento alla lunghezza ed alla larghezza del sepalo. Quello che facciamo ora e implementare la cross validation , e quindi andiamo a suddividire i dati di addestramento in due parti , una per l'addestramento e l'altra per la valutazione del modello ottenuto.
+
+```bash
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+
+if __name__ == '__main__':
+    # caricamento dataset
+    ds = datasets.load_iris()
+    # caricamento esempi di addestramento
+    X  = ds.data[:,[0,1]]
+    y  = ds.target
+    # cross validation
+    X_train , X_test , y_train , y_test = train_test_split(X,y,test_size=0.2,random_state=1,stratify=y)
+```
+Quindi lo 80% dei dati verranno utilizzati per l'addestramento ed il restante 20% per la validazione del modello. Ai fini di massimizzare le prestazioni dell'algoritmo , andiamo a standardizzare i dati
+
+```bash
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+if __name__ == '__main__':
+    # caricamento dataset
+    ds = datasets.load_iris()
+    # caricamento esempi di addestramento
+    X  = ds.data[:,[0,1]]
+    y  = ds.target
+    # cross validation
+    X_train , X_test , y_train , y_test = train_test_split(X,y,test_size=0.2,random_state=1,stratify=y)
+    # standardizzazione
+    sc = StandardScaler()
+    sc = sc.fit(X_train)
+    X_std = sc.transform(X_train)
+    X_std = sc.transform(X_test) 
+```
+In particolare quello che abbiamo fatto è standardizzare i dati , e quindi visibili come realizzazioni di una normale standard a media nulla e varianza unitaria. In particolare si noti come la standardizzazione sui dati di test viene fatta in accordo a media e varianza calcolati sui dati di addestramento. Questo ovviamente , per permetterne un cofronto.
+
+Iniziamo con plottare i dati di addestramento al fine di verificare l'esistenza di un iperpiano (retta) di separazione
+```bash
+    plt.figure(1)
+    plt.scatter(X[:50,0],X[:50,1],marker='o',color='red',label='Setosa')
+    plt.scatter(X[50:100,0],X[50:100,1],marker='x',color='blue',label='Versicolor')
+    plt.scatter(X[100:150,0],X[100:150,1],marker='^',color='green',label='Virginica')
+    plt.legend(loc='upper left')
+    plt.show()
+```
+
+
+
