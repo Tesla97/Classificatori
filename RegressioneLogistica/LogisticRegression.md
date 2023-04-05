@@ -239,3 +239,5 @@ il risultato dovrebbe essere il seguente
  [6.30548429e-05 2.63737313e-01 7.36199633e-01]
  [4.66856383e-09 4.17252862e-01 5.82747134e-01]]
 ```
+
+Ovviamente come potete ben intituire , la classe predetta per ciascun esempio corrisponde al valore di probabilità più alto.
