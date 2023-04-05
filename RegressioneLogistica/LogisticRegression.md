@@ -240,4 +240,8 @@ il risultato dovrebbe essere il seguente
  [4.66856383e-09 4.17252862e-01 5.82747134e-01]]
 ```
 
-Ovviamente come potete ben intituire , la classe predetta per ciascun esempio corrisponde al valore di probabilità più alto.
+Ovviamente come potete ben intituire , la classe predetta per ciascun esempio corrisponde al valore di probabilità più alto. Ad esempio supponiamo di voler predire la classe di appartenenza del primo esempio , basterà applicare il codice seguente
+
+```bash
+print(lr.predict_proba([X_test_std[1,:]]).argmax())
+```
