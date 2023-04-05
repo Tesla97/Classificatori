@@ -192,3 +192,9 @@ errors = (y_pred != y_test).sum()
 print('Errori Classificazione: %d' %errors)
 ```
 ovviamente come visto , vi saranno 11 errori in classificazione , il problema è dovuto al fatto che le caratteristiche selezionate non sono adatte. Si riprovi l'addestramento facendo riferimento alle altre 2 caratteristiche.
+
+Tracciamo infine le regioni decisionali del modello
+
+<p align='center'>
+  <img src='/img/regioniDecisionali.png' width='50%'>
+</p>
