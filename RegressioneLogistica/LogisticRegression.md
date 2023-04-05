@@ -156,12 +156,13 @@ if __name__ == '__main__':
     # standardizzazione
     sc = StandardScaler()
     sc = sc.fit(X_train)
-    X_std = sc.transform(X_train)
-    X_std = sc.transform(X_test) 
+    X_train_std= sc.transform(X_train)
+    X_test_std = sc.transform(X_test) 
 ```
 In particolare quello che abbiamo fatto è standardizzare i dati , e quindi visibili come realizzazioni di una normale standard a media nulla e varianza unitaria. In particolare si noti come la standardizzazione sui dati di test viene fatta in accordo a media e varianza calcolati sui dati di addestramento. Questo ovviamente , per permetterne un cofronto.
 
 Iniziamo con plottare i dati di addestramento al fine di verificare l'esistenza di un iperpiano (retta) di separazione
+
 ```bash
     plt.figure(1)
     plt.scatter(X[:50,0],X[:50,1],marker='o',color='red',label='Setosa')
@@ -170,6 +171,24 @@ Iniziamo con plottare i dati di addestramento al fine di verificare l'esistenza 
     plt.legend(loc='upper left')
     plt.show()
 ```
+<p align='center'>
+  <img src='/img/verificaEsistenzaIperpiano.png' width='50%'>
+</p>
 
+Come possiamo notare i dati non sono separabili linearmente. Procediamo dunque con l'addestramento di un modello a regressione logistica , come di seguito riportato
 
+```bash
+# regressione logistica
+lr = LogisticRegression(C = 100.0 , random_state= 1 , solver='lbfgs' , multi_class='ovr')
+lr.fit(X_train_std,y_train)
+```
 
+come ultimo passo andiamo a valutare le prestazioni sull'insieme dei dati di test
+
+```bash
+# predizione
+y_pred = lr.predict(X_test_std)
+errors = (y_pred != y_test).sum()
+print('Errori Classificazione: %d' %errors)
+```
+ovviamente come visto , vi saranno 11 errori in classificazione , il problema è dovuto al fatto che le caratteristiche selezionate non sono adatte. Si riprovi l'addestramento facendo riferimento alle altre 2 caratteristiche.
