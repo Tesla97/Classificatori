@@ -1,5 +1,5 @@
 # SVM Kernel
-Le macchine a vettori di supporto sono ovviamente classificatori lineari binari. Nascono con l'obiettivo di massimizzare il margine di separazione tra le classi. In particolare come è ben noto , l'individuazione di un margine decisionale lineare , passa attravero un problema di ottimo vincolato , più precisamente , il vettore dei pesi w , altro non è che soluzione del seguente problema di ottimo 
+Le macchine a vettori di supporto sono classificatori lineari binari. Nascono con l'obiettivo di massimizzare il margine di separazione tra le classi. In particolare come è ben noto , l'individuazione di un margine decisionale lineare , passa attravero un problema di ottimo vincolato , più precisamente , il vettore dei pesi w , altro non è che soluzione del seguente problema di ottimo 
 
 <p>
   min |w|</br>
